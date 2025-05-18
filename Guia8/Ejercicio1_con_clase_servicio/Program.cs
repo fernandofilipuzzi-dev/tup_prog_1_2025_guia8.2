@@ -14,10 +14,13 @@ namespace Ejercicio1_con_clase_servicio
         #region metodos 
         static int SolicitarOpcionMenu()
         {
+            Console.Clear();
             Console.WriteLine("Ingrese las siguiente opciones:");
             Console.WriteLine("1- Solicitar un solo número");
             Console.WriteLine("2- Solicitar varios números.");
             Console.WriteLine("3- Mostrar máximo y mínimo.");
+            Console.WriteLine("4- Mostrar promedio.");
+            Console.WriteLine("(otro)- Salir.");
             int op = Convert.ToInt32(Console.ReadLine());
             return op;
         }
@@ -28,6 +31,7 @@ namespace Ejercicio1_con_clase_servicio
             int valor = Convert.ToInt32(Console.ReadLine());
             servicio.RegistrarValor(valor);
         }
+
         static void SolicitarVariosNumeros()
         {
             Console.Clear();
@@ -79,11 +83,11 @@ namespace Ejercicio1_con_clase_servicio
 
         static void Main(string[] args)
         {
-          
+
             int op = 0;
 
             op = SolicitarOpcionMenu();
-            while (op != 1)
+            while (op != -1)
             {
 
                 switch (op)
@@ -94,13 +98,21 @@ namespace Ejercicio1_con_clase_servicio
                     case 2:
                         SolicitarVariosNumeros();
                         break;
-                    default:
+                    case 3:
                         MostrarMaximo();
                         MostrarMinimo();
                         break;
+                    case 4:
+                        CalcularYMostrarPromedio();
+                        break;
+                    default:
+                        op = -1;
+                        break;
                 }
 
-                op = SolicitarOpcionMenu();
+                if (op != -1)
+                    op = SolicitarOpcionMenu();
             }
         }
+    }
 }

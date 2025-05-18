@@ -22,7 +22,7 @@ namespace Ejercicio1_con_clase_servicio.Models
         public double CalcularPromedio()
         { 
             if(Contador>0)
-                return acumulador/Contador;
+                return 1.0*acumulador/Contador;
             return 0;
         }
 
