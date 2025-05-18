@@ -7,18 +7,5 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-   <ItemGroup>
-    <None Include="Models\Servicio.cs" />
-    <None Include="Program.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="UML\diagrama.uml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="UML\diagrama.jpg" />
-  </ItemGroup>
-
+ 
 </Project>

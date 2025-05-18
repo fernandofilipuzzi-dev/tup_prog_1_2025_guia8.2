@@ -1,9 +1,4 @@
 ﻿using Ejercicio1_con_clase_servicio.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ejercicio1_con_clase_servicio
 {
@@ -20,10 +15,18 @@ namespace Ejercicio1_con_clase_servicio
             Console.WriteLine("2- Solicitar varios números.");
             Console.WriteLine("3- Mostrar máximo y mínimo.");
             Console.WriteLine("4- Mostrar promedio.");
+            Console.WriteLine("5- Mostrar cantidad de números ingresados.");
+            Console.WriteLine("6- Reiniciar variables.");
             Console.WriteLine("(otro)- Salir.");
             int op = Convert.ToInt32(Console.ReadLine());
             return op;
         }
+
+        static void IniciarVariables()
+        {
+            servicio = new Servicio();
+        }
+
         static void SolicitarNumero()
         {
             Console.Clear();
@@ -79,6 +82,25 @@ namespace Ejercicio1_con_clase_servicio
             Console.WriteLine("Presione una tecla para volver al menú principal");
             Console.ReadKey();
         }
+
+        static void MostrarCantidad()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Pantalla de cantidad de valores procesados\n\n");
+
+            if (servicio.Contador > 0)
+            {
+                Console.WriteLine("Cantidad: " + servicio.Contador);
+            }
+            else
+            {
+                Console.WriteLine("Cantidad: No se han ingresado números");
+            }
+
+            Console.WriteLine("Presione una tecla para volver al menú principal");
+            Console.ReadKey();
+        }
         #endregion
 
         static void Main(string[] args)
@@ -104,6 +126,12 @@ namespace Ejercicio1_con_clase_servicio
                         break;
                     case 4:
                         CalcularYMostrarPromedio();
+                        break;
+                    case 5:
+                        MostrarCantidad();
+                        break;
+                    case 6:
+                        IniciarVariables();
                         break;
                     default:
                         op = -1;
