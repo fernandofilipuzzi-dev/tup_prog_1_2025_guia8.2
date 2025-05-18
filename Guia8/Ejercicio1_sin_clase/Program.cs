@@ -18,7 +18,8 @@ namespace Ejercicio1_sin_clase
         #region metodos 
         static int SolicitarOpcionMenu()
         {
-            Console.WriteLine("Ingrese las siguiente opciones:");
+            Console.Clear();
+            Console.WriteLine("Ingrese las siguiente opciones:\n\n");
             Console.WriteLine("1- Solicitar un solo número");
             Console.WriteLine("2- Solicitar varios números.");
             Console.WriteLine("3- Mostrar máximo y mínimo.");
@@ -100,10 +101,8 @@ namespace Ejercicio1_sin_clase
             minimo = 0;
             acumulador = 0;
 
-            int op = 0;
-
-            op = SolicitarOpcionMenu();
-            while (op != 1)
+            int op = SolicitarOpcionMenu();
+            while (op != -1)
             {
 
                 switch (op)
@@ -126,7 +125,7 @@ namespace Ejercicio1_sin_clase
                         break;
                 }
 
-                if(op<>-1)
+                if(op!=-1)
                     op = SolicitarOpcionMenu();
             }
         }
