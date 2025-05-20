@@ -8,7 +8,7 @@ namespace Ejercicio2_Encuesta
 
         #region metodos 
 
-        static int SolicitarOpcionMenu()
+        static int MostrarPantallaSolicitarOpcionMenu()
         {
             Console.Clear();
             Console.WriteLine("Ingrese las siguiente opciones:");
@@ -21,7 +21,7 @@ namespace Ejercicio2_Encuesta
             return op;
         }
 
-        static void MostrarPantallaEncuesta()
+        static void MostrarPantallaSolicitarEncuesta()
         {
             int tipoVehiculo;
             double distancia;
@@ -37,7 +37,7 @@ namespace Ejercicio2_Encuesta
             servicio.RegistrarEncuesta(tipoVehiculo, distancia);
         }
 
-        static void MostrarPantallaVariasEncuestas()
+        static void MostrarPantallaSolicitarVariasEncuestas()
         {
             int tipoVehiculo;
             double distancia;
@@ -92,17 +92,19 @@ namespace Ejercicio2_Encuesta
 
         static void Main(string[] args)
         {
-            int op = SolicitarOpcionMenu();
+            int op = MostrarPantallaSolicitarOpcionMenu();
 
+            #region iterar cada persona encuestada
             while (op != -1)
             {
+                #region iterar opciones menú
                 switch (op)
                 {
                     case 1:
-                        MostrarPantallaEncuesta();
+                        MostrarPantallaSolicitarEncuesta();
                         break;
                     case 2:
-                        MostrarPantallaVariasEncuestas();
+                        MostrarPantallaSolicitarVariasEncuestas();
                         break;
                     case 3:
                         MostrarPantallaPromediosResultados();
@@ -114,9 +116,14 @@ namespace Ejercicio2_Encuesta
                         op = -1;
                         break;
                 }
-                if(op!=-1)
-                    op = SolicitarOpcionMenu();
-            }            
+                #endregion
+
+                #region solicitar opción menu
+                if (op!=-1)
+                    op = MostrarPantallaSolicitarOpcionMenu();
+                #endregion
+            }
+            #endregion
         }
     }
 }

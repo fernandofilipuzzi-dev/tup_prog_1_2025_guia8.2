@@ -16,7 +16,7 @@ namespace Ejercicio1_sin_clase
         #endregion
 
         #region metodos 
-        static int SolicitarOpcionMenu()
+        static int MostrarPantallaSolicitarOpcionMenu()
         {
             Console.Clear();
             Console.WriteLine("Ingrese las siguiente opciones:\n\n");
@@ -28,7 +28,14 @@ namespace Ejercicio1_sin_clase
             int op = Convert.ToInt32(Console.ReadLine());
             return op;
         }
-        static void SolicitarNumero()
+        static void MostrarPantallaIniciarVariables()
+        {
+            contador = 0;
+            maximo = 0;
+            minimo = 0;
+            acumulador = 0;
+        }
+        static void MostrarPantallaSolicitarNumero()
         {
             Console.Clear();
             Console.WriteLine("Ingrese un número ");
@@ -46,7 +53,7 @@ namespace Ejercicio1_sin_clase
                 minimo = valor;
             }
         }
-        static void SolicitarVariosNumeros()
+        static void MostrarPantallaSolicitarVariosNumeros()
         {
             Console.Clear();
             Console.WriteLine("Ingrese  cuantos números va a ingresar");
@@ -54,10 +61,10 @@ namespace Ejercicio1_sin_clase
 
             for (int n = 0; n < cantidad; n++)
             {
-                SolicitarNumero();
+                MostrarPantallaSolicitarNumero();
             }
         }
-        static void MostrarMaximo()
+        static void MostrarPantallaMaximo()
         {
             Console.Clear();
             Console.WriteLine("Mostrar máximo: "+ maximo);
@@ -65,7 +72,7 @@ namespace Ejercicio1_sin_clase
             Console.WriteLine("Presione una tecla para volver al menú principal");
             Console.ReadKey();            
         }
-        static void MostrarMinimo()
+        static void MostrarPantallaMinimo()
         {
             Console.Clear();
             Console.WriteLine("Mostrar mímimo: " + minimo);
@@ -73,7 +80,7 @@ namespace Ejercicio1_sin_clase
             Console.WriteLine("Presione una tecla para volver al menú principal");
             Console.ReadKey();
         }
-        static void CalcularYMostrarPromedio()
+        static void MostrarPantallaCalcularYMostrarPromedio()
         {
             Console.Clear();
 
@@ -92,42 +99,69 @@ namespace Ejercicio1_sin_clase
             Console.WriteLine("Presione una tecla para volver al menú principal");
             Console.ReadKey();
         }
+        static void MostrarPantallaCantidad()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Pantalla de cantidad de valores procesados\n\n");
+
+            if (contador > 0)
+            {
+                Console.WriteLine("Cantidad: " + contador);
+            }
+            else
+            {
+                Console.WriteLine("Cantidad: No se han ingresado números");
+            }
+
+            Console.WriteLine("Presione una tecla para volver al menú principal");
+            Console.ReadKey();
+        }
         #endregion
 
         static void Main(string[] args)
         {
-            contador = 0;
-            maximo = 0;
-            minimo = 0;
-            acumulador = 0;
+            MostrarPantallaIniciarVariables();
 
-            int op = SolicitarOpcionMenu();
+            int op = MostrarPantallaSolicitarOpcionMenu();
+
+            #region iterar opciones menú
             while (op != -1)
             {
-
+                #region verificar opción
                 switch (op)
                 {
                     case 1:
-                        SolicitarNumero();
+                        MostrarPantallaSolicitarNumero();
                         break;
                     case 2:
-                        SolicitarVariosNumeros();
+                        MostrarPantallaSolicitarVariosNumeros();
                         break;
                     case 3:
-                        MostrarMaximo();
-                        MostrarMinimo();
+                        MostrarPantallaMaximo();
+                        MostrarPantallaMinimo();
                         break;
                     case 4:
-                        CalcularYMostrarPromedio();
+                        MostrarPantallaCalcularYMostrarPromedio();
+                        break;
+                    case 5:
+                        MostrarPantallaCantidad();
+                        break;
+                    case 6:
+                        MostrarPantallaIniciarVariables();
                         break;
                     default:
                         op = -1;
                         break;
                 }
+                #endregion
 
-                if(op!=-1)
-                    op = SolicitarOpcionMenu();
+                #region solicitar opción
+                if (op!=-1)
+                    op = MostrarPantallaSolicitarOpcionMenu();
+                #endregion
             }
+            #endregion
         }
     }
 }

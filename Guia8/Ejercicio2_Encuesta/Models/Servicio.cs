@@ -5,15 +5,15 @@ namespace Ejercicio2_Encuesta.Models
     {
         public int CantidadEncuestados;
 
-        int ContadorBici;
-        int ContadorMoto;
-        int ContadorAuto;
-        int ContadorPublico;
+        int contadorBici;
+        int contadorMoto;
+        int contadorAuto;
+        int contadorPublico;
 
-        double AcumuladorDistanciaBici;
-        double AcumuladorDistanciaMoto;
-        double AcumuladorDistanciaAuto;
-        double AcumuladorDistanciaPublico;
+        double acumuladorDistanciaBici;
+        double acumuladorDistanciaMoto;
+        double acumuladorDistanciaAuto;
+        double acumuladorDistanciaPublico;
 
         public void RegistrarEncuesta(int tipoTransporte, double distancia)
         {
@@ -21,26 +21,26 @@ namespace Ejercicio2_Encuesta.Models
             {
                 case 1:
                     {
-                        AcumuladorDistanciaBici += distancia;
-                        ContadorBici++;
+                        acumuladorDistanciaBici += distancia;
+                        contadorBici++;
                     }
                     break;
                 case 2:
                     {
-                        AcumuladorDistanciaMoto += distancia;
-                        ContadorMoto++;
+                        acumuladorDistanciaMoto += distancia;
+                        contadorMoto++;
                     }
                     break;
                 case 3:
                     {
-                        AcumuladorDistanciaAuto += distancia;
-                        ContadorAuto++;
+                        acumuladorDistanciaAuto += distancia;
+                        contadorAuto++;
                     }
                     break;
                 case 4:
                     {
-                        AcumuladorDistanciaPublico += distancia;
-                        ContadorPublico++;
+                        acumuladorDistanciaPublico += distancia;
+                        contadorPublico++;
                     }
                     break;
             }
@@ -55,26 +55,26 @@ namespace Ejercicio2_Encuesta.Models
             {
                 case 1:
                     {
-                        if(ContadorBici>0)
-                            promedio = 1.0 * AcumuladorDistanciaBici / ContadorBici;
+                        if(contadorBici>0)
+                            promedio = 1.0 * acumuladorDistanciaBici / contadorBici;
                     }
                     break;
                 case 2:
                     {
-                        if(ContadorMoto>0)
-                            promedio = 1.0 *AcumuladorDistanciaMoto / ContadorMoto;
+                        if(contadorMoto>0)
+                            promedio = 1.0 *acumuladorDistanciaMoto / contadorMoto;
                     }
                     break;
                 case 3:
                     {
-                        if(ContadorAuto>0)
-                            promedio = 1.0 *AcumuladorDistanciaAuto / ContadorAuto;
+                        if(contadorAuto>0)
+                            promedio = 1.0 *acumuladorDistanciaAuto / contadorAuto;
                     }
                     break;
                 case 4:
                     {
-                        if(ContadorPublico>0)
-                            promedio = 1.0 *AcumuladorDistanciaPublico / ContadorPublico;
+                        if(contadorPublico>0)
+                            promedio = 1.0 *acumuladorDistanciaPublico / contadorPublico;
                     }
                     break;
             }
