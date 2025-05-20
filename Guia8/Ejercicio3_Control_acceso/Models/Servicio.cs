@@ -15,9 +15,9 @@ namespace Ejercicio3_Control_acceso.Models
         {
             if (esTicketValido == false)
             { 
-                double valorBase = DetarminarValorVehiculo(tipoVehiculo);
+                double valorBase = DeterminarValorVehiculo(tipoVehiculo);
                 double valorBaseTotal = cantidadTipo * valorBase;
-                double valorDiasTotal = valorBaseTotal * DetarminarPorcentaje(numerosDias);
+                double valorDiasTotal = valorBaseTotal * DeterminarPorcentaje(numerosDias);
                 double valorIva = valorDiasTotal * 21 / 100;
                 double subTotalConIva = valorDiasTotal + valorIva;
                 double eco = subTotalConIva * 15 / 100;
@@ -27,7 +27,7 @@ namespace Ejercicio3_Control_acceso.Models
             }
         }
 
-        protected double DetarminarValorVehiculo(int tipo)
+        double DeterminarValorVehiculo(int tipo)
         {
             double valor = 0;
             switch (tipo)
@@ -42,7 +42,7 @@ namespace Ejercicio3_Control_acceso.Models
             return valor;
         }
 
-        protected double DetarminarPorcentaje(int dias)
+        double DeterminarPorcentaje(int dias)
         {
             if (dias == 1)
                 return 100;

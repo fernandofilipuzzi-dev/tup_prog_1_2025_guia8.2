@@ -12,7 +12,7 @@ namespace Ejercicio3_Control_acceso
         static Servicio servicio = new Servicio();
 
         #region metodos
-        public static int MostrarSolicitarOpcion()
+        public static int MostrarPantallaSolicitarOpcion()
         {
             Console.WriteLine("Control de acceso \n\n");
             Console.WriteLine("1- Verificar Acceso");
@@ -22,7 +22,7 @@ namespace Ejercicio3_Control_acceso
             return op;
         }
 
-        public static void MostrarRegistrarAcceso()
+        public static void MostrarPantallaRegistrarAcceso()
         {
             Console.WriteLine("Control de acceso \n\n");
             int esValido = Convert.ToInt32(Console.ReadLine());
@@ -32,18 +32,18 @@ namespace Ejercicio3_Control_acceso
 
         static void Main(string[] args)
         {
-            int op = MostrarSolicitarOpcion();
+            int op = MostrarPantallaSolicitarOpcion();
 
             while(op!=-1) 
             {
                 switch(op)
                 {
                     case 1:
-                        MostrarRegistrarAcceso();
+                        MostrarPantallaRegistrarAcceso();
                         break;
                 }
 
-                op = MostrarSolicitarOpcion();
+                op = MostrarPantallaSolicitarOpcion();
             }
             
         }
