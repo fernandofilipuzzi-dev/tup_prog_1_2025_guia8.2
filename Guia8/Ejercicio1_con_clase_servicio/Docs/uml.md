@@ -15,8 +15,9 @@ graph TD
     A3 --> B5[Verificar valor es mínimo o primer ingreso]
     A3 --> B6[Contar ingreso]
 
-    B4 --> C1[Actualizar máximo con valor ingresado]
-    B5 --> C2[Actualizar mínimo con valor ingresado]
+    B4 --> C1[Actualizar máximo con valor ingresado  o]
+    B4 --> C2[\ o]
+    B5 --> C3[Actualizar mínimo con valor ingresado]
 
     A4 --> D1[Calcular promedio]
     A5 --> D2[/\ Mostrar valores /]
